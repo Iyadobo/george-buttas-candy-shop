@@ -555,67 +555,72 @@
   .stage{
     max-width:none;
     min-height:100svh;
-    padding:clamp(20px,3vw,44px) clamp(18px,4vw,72px) clamp(28px,4vw,56px);
-    gap:clamp(18px,2vw,30px);
+    padding:clamp(14px,2vw,28px) clamp(18px,3vw,48px) clamp(18px,2vw,30px);
+    gap:12px;
     background:#1f100f;
   }
   .caption-row{font-size:11px;color:rgba(255,248,249,.66);}
   .wordmark{color:#fff8f9;}
   .phones{
-    width:min(100%,1500px);
+    width:min(100%,1240px);
     flex:1;
     display:grid;
-    grid-template-columns:minmax(250px,.92fr) minmax(370px,1.35fr) minmax(250px,.92fr);
-    gap:clamp(18px,2.4vw,42px);
-    align-items:stretch;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:clamp(18px,3vw,40px);
+    align-items:center;
+    justify-items:center;
   }
   .phone{
-    width:auto;
-    height:clamp(650px,calc(100svh - 142px),840px);
-    min-height:650px;
-    border-radius:32px;
-    padding:10px;
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:0 22px 56px rgba(0,0,0,.36),8px 8px 0 rgba(226,65,33,.72);
+    width:clamp(300px,25vw,360px);
+    height:auto;
+    min-height:0;
+    aspect-ratio:360 / 780;
+    border-radius:44px;
+    padding:12px;
+    border:none;
+    box-shadow:var(--shadow);
   }
-  .screen{border-radius:24px;}
-  .dynamic-island{top:14px;height:25px;width:92px;}
+  .screen{border-radius:34px;}
+  .dynamic-island{top:18px;height:28px;width:96px;}
   .boot-screen{background:#24100f;}
   .boot-bg{background:none;}
   .boot-content{
-    justify-content:space-between;
-    align-items:stretch;
-    gap:clamp(16px,2.2vh,26px);
-    padding:clamp(24px,3vw,42px) clamp(20px,3vw,38px) clamp(22px,3vw,34px);
+    justify-content:center;
+    align-items:center;
+    gap:0;
+    padding:32px 24px;
   }
   .boot-intro{display:grid;justify-items:center;gap:14px;}
-  .boot-loading{display:grid;justify-items:center;gap:10px;width:100%;}
+  .boot-loading{display:grid;justify-items:center;gap:10px;width:100%;margin-top:28px;}
   .boot-avatar{width:clamp(110px,10vw,152px);height:clamp(110px,10vw,152px);padding:5px;background:var(--accent);box-shadow:7px 7px 0 var(--accent-2);}
-  .boot-title{font-size:clamp(30px,3.1vw,46px);letter-spacing:-.04em;text-wrap:balance;}
+  .boot-title{font-size:34px;letter-spacing:normal;text-wrap:balance;}
   .boot-sub{max-width:32ch;min-height:0;color:#decfd1;}
   .boot-bar-bg{width:min(100%,300px);height:10px;background:rgba(255,255,255,.18);}
   .boot-bar-fill{background:var(--accent);}
-  .boot-cta{background:var(--accent);border-radius:6px;box-shadow:5px 5px 0 var(--accent-2);}
+  .boot-cta{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-radius:22px;box-shadow:0 8px 22px rgba(255,59,109,.4);}
   .shop-header{padding:12px clamp(18px,2.2vw,28px) 14px;}
-  .shop-title{font-size:clamp(30px,3vw,42px);letter-spacing:-.045em;}
+  .shop-title{font-size:28px;letter-spacing:normal;}
   .section-title{padding:8px clamp(18px,2.2vw,28px) 12px;}
   .products{padding:0 clamp(18px,2.2vw,28px) 18px;gap:16px;}
   .product-card{border-radius:18px;box-shadow:4px 4px 0 rgba(45,35,40,.12);}
   .product-thumb{border-radius:12px;background:#fff1f3;}
-  .add-btn,.tab-center{background:var(--accent);box-shadow:4px 4px 0 var(--accent-2);}
+  .add-btn,.tab-center{background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 22px rgba(255,59,109,.35);}
   .orders-header{padding:12px clamp(18px,2.2vw,28px) 14px;}
   .orders-body{padding:0 clamp(18px,2.2vw,28px) 18px;}
   .order-card{box-shadow:4px 4px 0 rgba(255,59,109,.16);}
   @media (max-width:960px){
     .phones{grid-template-columns:repeat(2,minmax(280px,1fr));}
-    .phone{height:720px;min-height:720px;}
-    .phone:nth-child(2){grid-row:span 2;align-self:stretch;height:auto;}
+    .phone{width:min(360px,calc(50vw - 48px));height:auto;min-height:0;}
+    .phone:nth-child(2){grid-row:auto;align-self:center;height:auto;}
   }
   @media (max-width:640px){
     .stage{padding:16px;}
     .caption-row{gap:12px;align-items:flex-start;line-height:1.35;}
-    .phones{grid-template-columns:1fr;gap:24px;}
-    .phone,.phone:nth-child(2){height:720px;min-height:720px;grid-row:auto;transform:none;}
+    .phones{grid-template-columns:1fr;gap:20px;}
+    .phone,.phone:nth-child(2){width:min(340px,calc(100vw - 48px));height:auto;min-height:0;grid-row:auto;transform:none;}
+    .boot-content{padding:28px 20px;}
+    .boot-loading{margin-top:24px;}
+    .george-bubble{display:none;}
   }
 </style>
 </head>
