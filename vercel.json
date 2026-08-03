@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/george-butta-candy-shop.html"
+    }
+  ]
+}
